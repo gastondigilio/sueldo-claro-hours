@@ -53,7 +53,7 @@ function Index() {
   const [geo, setGeo] = useState("");
   const [pres, setPres] = useState("");
   const [presModo, setPresModo] = useState<"monto" | "pct">("monto");
-  const [horas, setHoras] = useState<Record<string, { cant: string; valor: string }>>({
+  const [horas, setHoras] = useState<Record<"t1" | "t2" | "t3", { cant: string; valor: string }>>({
     t1: { cant: "", valor: "" }, t2: { cant: "", valor: "" }, t3: { cant: "", valor: "" },
   });
 
@@ -67,10 +67,10 @@ function Index() {
     ["Sueldo básico", vBasico],
     ["Sueldo geográfico", vGeo],
     ["Presentismo", vPres],
-    ...tramos.map((t, i) => [t.label, vTramos[i]] as [string, number]),
+    ...tramos.map((t, i) => [t.label, vTramos[i] ?? 0] as [string, number]),
   ] as [string, number][];
 
-  const setH = (k: string, f: "cant" | "valor", v: string) =>
+  const setH = (k: "t1" | "t2" | "t3", f: "cant" | "valor", v: string) =>
     setHoras((h) => ({ ...h, [k]: { ...h[k], [f]: v } }));
 
   const reset = () => {
@@ -121,7 +121,7 @@ function Index() {
                     <div className="sm:col-span-3 -mb-1 text-sm font-semibold text-secondary-foreground">{t.label}</div>
                     <Field label="Cantidad" value={horas[t.key].cant} onChange={(v) => setH(t.key, "cant", v)} />
                     <Field label="Valor hora" prefix="$" value={horas[t.key].valor} onChange={(v) => setH(t.key, "valor", v)} />
-                    <div className="pb-2.5 text-right text-sm font-semibold tabular-nums sm:min-w-28">{fmt(vTramos[i])}</div>
+                    <div className="pb-2.5 text-right text-sm font-semibold tabular-nums sm:min-w-28">{fmt(vTramos[i] ?? 0)}</div>
                   </div>
                 ))}
               </div>
