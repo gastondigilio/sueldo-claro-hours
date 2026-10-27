@@ -1,14 +1,25 @@
-# Welcome to your Lovable project
+# Sueldo Claro Hours
+
+quiero hacer una calculadora de sueldos. haceme algo estetico donde basicamente va a haber 
+
+sueldo basico
+sueldo geografico
+presentismo
+horas de 45 a 60
+horas de 61 a 75
+horas de 76 a 120
+
+armame algo estetico y funcional
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/05d0ac4d-7e8c-4a03-beeb-7ed8dce3d996).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +31,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
